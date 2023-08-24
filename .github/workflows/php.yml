@@ -11,6 +11,9 @@ jobs:
       matrix:
         laravel-version: ['^8.0', '^9.0', 10.*]
         php-version: ['8.0', '8.1', '8.2']
+        exclude:
+          - laravel-version: '10.*'
+            php-version: '8.0'
     name: PHP ${{ matrix.php-version }} on Laravel ${{ matrix.laravel-version }}
     steps:
       - name: Checkout
